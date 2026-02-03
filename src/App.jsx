@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen" data-theme={theme}>
+    <div data-theme={theme}>
       <Navbar />
       <Routes>
         <Route
