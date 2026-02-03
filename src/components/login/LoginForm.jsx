@@ -19,6 +19,8 @@ const LoginForm = ({ formData, setFormData, handleSubmit }) => {
             <Mail className="size-5 text-base-content/40" />
           </div>
           <input
+            autoComplete="email"
+            name="email"
             required
             type="email"
             className={`input input-bordered w-full pl-10`}
@@ -41,6 +43,8 @@ const LoginForm = ({ formData, setFormData, handleSubmit }) => {
           </div>
           <input
             required
+            autoComplete="current-password"
+            name="password"
             type={showPassword ? 'text' : 'password'}
             className={`input input-bordered w-full pl-10`}
             placeholder={showPassword ? 'your password' : '••••••••'}
