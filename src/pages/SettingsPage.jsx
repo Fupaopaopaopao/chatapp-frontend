@@ -3,10 +3,10 @@ import { useThemeStore } from '../store/useThemeStore'
 import { Send } from 'lucide-react'
 
 const PREVIEW_MESSAGES = [
-  { id: 1, content: "Hey! How's it going?", isSent: false },
+  { id: 1, content: 'Meow~', isSent: false },
   {
     id: 2,
-    content: "I'm doing great! Just working on some new features.",
+    content: 'Meow, Meow, Meow~',
     isSent: true,
   },
 ]
