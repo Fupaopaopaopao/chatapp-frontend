@@ -1,0 +1,38 @@
+import { create } from 'zustand'
+import axiosInstance from '../lib/axios'
+import { toast } from 'react-hot-toast'
+
+export const useChatStore = create((set) => ({
+  users: [],
+  messages: [],
+  isUsersLoading: [],
+  isMessagesLoading: [],
+  selectedUser: null,
+  setSelectedUser: (selectedUser) => {
+    set({ selectedUser: selectedUser })
+  },
+  onlineUsers: [],
+
+  fetchUsers: async () => {
+    set({ isUsersLoading: true })
+    try {
+      const response = await axiosInstance.get('/api/messages/siderUsers')
+      set({ users: response.data })
+    } catch (error) {
+      toast.error(error.response.data.message)
+    } finally {
+      set({ isUsersLoading: false })
+    }
+  },
+  fetchMessage: async (receiverId) => {
+    set({ isMessagesLoading: true })
+    try {
+      const response = await axiosInstance.get(`/api/messages/${receiverId}`)
+      set({ messages: response.data })
+    } catch (error) {
+      toast.error(error.response.data.message)
+    } finally {
+      set({ isMessagesLoading: false })
+    }
+  },
+}))
