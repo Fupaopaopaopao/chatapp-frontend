@@ -43,7 +43,7 @@ const LoginPage = () => {
       <AuthImagePattern
         title={'Welcome back!'}
         subtitle={
-          'Sign in to continue your conversations and catch up with your messages.'
+          "Lady Orange miss you so much. Don't forget to bring some snacks home."
         }
       />
     </div>

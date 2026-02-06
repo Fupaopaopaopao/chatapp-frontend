@@ -1,7 +1,9 @@
+import { useAuthStore } from '../store/useAuthStore'
 import { useChatStore } from '../store/useChatStore'
 
 const UserBtn = ({ filteredUsers }) => {
-  const { setSelectedUser, selectedUser, onlineUsers } = useChatStore()
+  const { setSelectedUser, selectedUser } = useChatStore()
+  const { onlineUsers } = useAuthStore()
   return (
     <>
       {filteredUsers.map((user) => (
